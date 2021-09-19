@@ -1,0 +1,60 @@
+
+Comandos Git
+
+Comando para ver a chave de encriptação do arquivo. 
+- openssl sha1 (nome do arquivo com a extenção sem parenteses)
+
+Comando que mostra o caminho completo que você esta
+- pwd
+
+Comando usado para criar um repositorio no Git
+- git init
+
+Comando para enviar o arquivo para o Github
+- git commit
+
+
+OBJETOS DO Git
+- BLOBS = "arquivos"
+- TREES = aponta os BLOBS
+- COMMITS = aponta para as arvores
+
+
+SEGURANÇA
+Comando para gerar chave SSH
+- ssh-keygen -t ed25519 -C (seu email, sem parenteses)
+
+
+Comando para startar o agente que comunica com o Github
+- eval $(ssh-agent -s)
+
+
+Comando para altenticar com a chave para a comunicação entre o
+Git e o Github
+- ssh-add (caminho e nome da chave privada sem as aspas) 
+Ao fazer isso, o bash irá pedir a senha que você usou para criar 
+as chaves
+
+
+Comandos para altendicar o Git no Github
+- git config --global user.email "informar o email da conta que irá utilizar"
+- git config --global user.name (informar o nick, sem as aspas)
+- git config --global --unset user.email (comando para retirar email do Git)
+- git config --global --unset user.name (comando para retirar o user name no Git)
+
+
+Comandos para comitar
+- git add * (mostra ao git a existencia do arquivo)
+- git commit -m "uma msg de texto para registro"
+- git remote add origin (colocar a URL disponivel no repositoro do Github)
+- git remote -v (lista as listas de repositorio cadastrados)
+- git push origin (O oringe é o "apelido dado ao link no github") master
+
+
+TERMINOLOGIAS DE ESTAGIOS DO GIT (ciclo de vida):
+- Unmodified = arquivos que não foi modificado
+- Modified = arquivos unmodified que sofreu alteração
+- Staged = onde ficam os arquivos que estão sendo preparados para outro tipo de agrupamento 
+
+- Untracked = quando o git ainda não tem ciencia do arquivo
+- tracked = são os arquivos que o git tem ciencia dele 
